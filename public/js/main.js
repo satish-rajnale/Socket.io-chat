@@ -17,11 +17,12 @@ socket.emit('joinRoom', { username, room });
 socket.on('roomUsers', ({ room, users }) => {
   outputRoomName(room);
   outputUsers(users);
+ 
 });
 
 // Message from server
 socket.on('message', message => {
-  console.log(message);
+  
   outputMessage(message);
 
   // Scroll down
@@ -31,12 +32,12 @@ socket.on('message', message => {
 // Message submit
 chatForm.addEventListener('submit', e => {
   e.preventDefault();
-
+ 
   // Get message text
   let msg = e.target.elements.msg.value;
-  
+ 
   msg = msg.trim();
-  
+ 
   if (!msg){
     return false;
   }
