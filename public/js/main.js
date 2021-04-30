@@ -18,11 +18,12 @@ socket.on('roomUsers', ({ room, users }) => {
   outputRoomName(room);
   outputUsers(users);
  
+ 
 });
 
 // Message from server
 socket.on('message', message => {
-  
+
   outputMessage(message);
 
   // Scroll down
@@ -50,8 +51,12 @@ chatForm.addEventListener('submit', e => {
   e.target.elements.msg.focus();
 });
 
+
 // Output message to DOM
 function outputMessage(message) {
+
+
+
   const div = document.createElement('div');
   div.classList.add('message');
   const p = document.createElement('p');
